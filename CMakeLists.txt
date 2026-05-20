@@ -14,4 +14,5 @@ add_executable(OOP_Project
         CreditNevoiPersonale.cpp
         CreditPrimaCasa.cpp
         Exceptii.cpp
-        main.cpp)
+        main.cpp
+        Raport.h)

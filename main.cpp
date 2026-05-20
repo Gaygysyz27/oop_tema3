@@ -3,6 +3,7 @@
 #include <limits>
 #include <sstream>
 #include "Banca.h"
+#include "Raport.h"
 #include "CreditFactory.h"
 #include "Exceptii.h"
 
@@ -116,6 +117,7 @@ void calculeazaPentruClient(Banca& banca) {
     else {
         std::cout << "Client inexistent.\n";
     }
+
 }
 
 int main() {
@@ -152,12 +154,19 @@ int main() {
             adaugaClientManual(banca);
         else if(opt == 3)
             calculeazaPentruClient(banca);
-        else if(opt == 4)
-            std::cout << "Credite create: " << Credit::getNumarCrediteCreate() << "\n";
+        else if(opt == 4) {
+            Raport<int> raportCredite(Credit::getNumarCrediteCreate());
+            raportCredite.afiseaza("Credite create: ");
+
+            int perioadaMaxima = valoareMaiMare(12, 24);
+            Raport<int> raportPerioada(perioadaMaxima);
+            raportPerioada.afiseaza("Perioada maxima testata: ");
+        }
         else if(opt != 0)
             std::cout << "Optiune invalida.\n";
 
     } while(opt != 0);
+
 
     return 0;
 }
