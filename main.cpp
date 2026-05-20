@@ -6,6 +6,7 @@
 #include "Raport.h"
 #include "CreditFactory.h"
 #include "Exceptii.h"
+#include "Raport.h"
 
 std::string tipDinOptiune(int opt) {
     if(opt == 1) return "auto";
