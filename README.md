@@ -17,39 +17,6 @@ Clasa abstracta `Credit` este baza ierarhiei. Ea contine datele comune: suma, do
 
 Pentru crearea creditelor am folosit un Factory simplu, in clasa `CreditFactory`. Astfel, codul din `main` nu mai construieste direct fiecare tip de credit, ci cere fabricii sa creeze obiectul potrivit dupa textul citit din fisier sau ales in meniu.
 
-## Cerinte bifate
-- cod separat in fisiere `.h` si `.cpp`
-- clasa de baza proprie: `Credit`
-- minim 3 clase derivate: `CreditAuto`, `CreditIpotecar`, `CreditNevoiPersonale`
-- derivata adaugata la final: `CreditPrimaCasa`
-- functie virtuala pura specifica temei: calculul ratei
-- afisare virtuala cu interfata non-virtuala
-- constructorii derivatelor apeleaza constructorul bazei
-- `Client` are atribut de tip pointer la baza: `std::vector<std::shared_ptr<Credit>>`
-- functii virtuale apelate prin pointer de baza
-- constructor virtual `clone` pentru copiere polimorfica
-- copy constructor si operator= cu copy and swap in `Client`
-- `std::dynamic_pointer_cast` folosit pentru numararea creditelor auto
-- exceptii proprii: `ExceptieAplicatie`, `ExceptieSuma`, `ExceptiePerioada`, `ExceptieTipCredit`, `ExceptieFisier`
-- exceptiile sunt folosite in constructori, factory si la fisiere
-- atribut si functie static: numarul total de credite create
-- STL: `vector`, `string`, `shared_ptr`
-- metode `const` unde obiectul nu se modifica
-- operator `<<`
-- citire din fisier text
-- design pattern: Factory
-- design pattern simplu: Prototype prin metoda `clone`
-
-## Commit final pentru cerinta cu derivata noua
-Pentru cerinta cu o clasa derivata adaugata la final, se poate adauga separat clasa `CreditPrimaCasa`, apoi se face commit separat si tag:
-
-```bash
-git add .
-git commit -m "Adauga CreditPrimaCasa"
-git tag v0.2
-```
-
-In aceasta arhiva clasa `CreditPrimaCasa` este deja integrata in `CreditFactory`, in meniu si in `date.txt`.
 
 ## Bibliografie
 - Curs POO - mostenire si functii virtuale
