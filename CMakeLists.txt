@@ -12,5 +12,6 @@ add_executable(OOP_Project
         CreditFactory.cpp
         CreditIpotecar.cpp
         CreditNevoiPersonale.cpp
+        CreditPrimaCasa.cpp
         Exceptii.cpp
         main.cpp)

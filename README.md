@@ -10,7 +10,7 @@ Fisierul `date.txt` are linii de forma:
 Nume Client;tip;suma;perioada
 ```
 
-Tipurile folosite initial sunt `auto`, `ipotecar` si `nevoi`. Perioada acceptata este 6, 12, 24 sau 36 luni.
+Tipurile folosite sunt `auto`, `ipotecar`, `nevoi` si `prima_casa`. Perioada acceptata este 6, 12, 24 sau 36 luni.
 
 ## Mod de rezolvare
 Clasa abstracta `Credit` este baza ierarhiei. Ea contine datele comune: suma, dobanda si perioada. Clasele `CreditAuto`, `CreditIpotecar` si `CreditNevoiPersonale` mostenesc clasa `Credit` si implementeaza calculul ratei. Clasa `Client` contine un vector de `std::shared_ptr<Credit>`, deci functiile virtuale sunt apelate prin pointeri la clasa de baza. Clasa `Banca` pastreaza clientii si cauta clientul dupa nume.
@@ -21,6 +21,7 @@ Pentru crearea creditelor am folosit un Factory simplu, in clasa `CreditFactory`
 - cod separat in fisiere `.h` si `.cpp`
 - clasa de baza proprie: `Credit`
 - minim 3 clase derivate: `CreditAuto`, `CreditIpotecar`, `CreditNevoiPersonale`
+- derivata adaugata la final: `CreditPrimaCasa`
 - functie virtuala pura specifica temei: calculul ratei
 - afisare virtuala cu interfata non-virtuala
 - constructorii derivatelor apeleaza constructorul bazei
@@ -48,7 +49,7 @@ git commit -m "Adauga CreditPrimaCasa"
 git tag v0.2
 ```
 
-In arhiva finala aceasta clasa poate fi integrata in `CreditFactory` si in meniu.
+In aceasta arhiva clasa `CreditPrimaCasa` este deja integrata in `CreditFactory`, in meniu si in `date.txt`.
 
 ## Bibliografie
 - Curs POO - mostenire si functii virtuale

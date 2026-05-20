@@ -3,3 +3,4 @@ Ana Popescu;ipotecar;80000;24
 Dan Mihai;nevoi;30000;6
 Mihai Eminescu;ipotecar;90000;36
 User Test;auto;50000;36
+Maria Stan;prima_casa;70000;24

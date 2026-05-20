@@ -2,6 +2,7 @@
 #include "CreditAuto.h"
 #include "CreditIpotecar.h"
 #include "CreditNevoiPersonale.h"
+#include "CreditPrimaCasa.h"
 #include "Exceptii.h"
 
 std::shared_ptr<Credit> CreditFactory::creeazaCredit(const std::string& tip, double suma, int perioada) {
@@ -13,6 +14,9 @@ std::shared_ptr<Credit> CreditFactory::creeazaCredit(const std::string& tip, dou
 
     if(tip == "nevoi")
         return std::make_shared<CreditNevoiPersonale>(suma, perioada);
+
+    if(tip == "prima_casa")
+        return std::make_shared<CreditPrimaCasa>(suma, perioada);
 
     throw ExceptieTipCredit();
 }

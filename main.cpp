@@ -10,6 +10,7 @@ std::string tipDinOptiune(int opt) {
     if(opt == 1) return "auto";
     if(opt == 2) return "ipotecar";
     if(opt == 3) return "nevoi";
+    if(opt == 4) return "prima_casa";
     throw ExceptieTipCredit();
 }
 
@@ -74,7 +75,7 @@ void adaugaClientManual(Banca& banca) {
     std::getline(std::cin, nume);
 
     int optTip;
-    std::cout << "1-auto 2-ipotecar 3-nevoi: ";
+    std::cout << "1-auto 2-ipotecar 3-nevoi 4-prima_casa: ";
     std::cin >> optTip;
 
     double suma;
